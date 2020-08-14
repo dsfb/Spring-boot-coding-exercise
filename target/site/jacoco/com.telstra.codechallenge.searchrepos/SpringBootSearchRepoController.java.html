@@ -10,22 +10,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
-<span class="nc" id="L13">@Slf4j</span>
+
+<span class="fc" id="L14">@Slf4j</span>
 @RestController
 public class SpringBootSearchRepoController {
-<span class="nc" id="L16">  Logger logger = LoggerFactory.getLogger(SpringBootSearchRepoController.class);</span>
+<span class="nc" id="L17">	Logger logger = LoggerFactory.getLogger(SpringBootSearchRepoController.class);</span>
 
-  private SpringBootSearchRepoService springBootSearchService;
+	public SpringBootSearchRepoService springBootSearchService;
 
-  public SpringBootSearchRepoController(
-<span class="nc" id="L21">      SpringBootSearchRepoService springBootSearchService) {</span>
-<span class="nc" id="L22">    this.springBootSearchService = springBootSearchService;</span>
-<span class="nc" id="L23">  }</span>
+<span class="nc" id="L21">	public SpringBootSearchRepoController(SpringBootSearchRepoService springBootSearchService) {</span>
+<span class="nc" id="L22">		this.springBootSearchService = springBootSearchService;</span>
+<span class="nc" id="L23">	}</span>
 
-  @RequestMapping(path = &quot;/search/repositories&quot;, method = RequestMethod.GET)
-  public List&lt;Repo&gt; repos() {
-<span class="nc" id="L27">	  logger.info(&quot;***Inside SpringBootSearchRepoController - repos()&quot;);</span>
-<span class="nc" id="L28">    return springBootSearchService.getRepos();</span>
-  }
+<span class="nc" id="L25">	public SpringBootSearchRepoController() {</span>
+		// TODO Auto-generated constructor stub
+<span class="nc" id="L27">	}</span>
+
+	/**
+	 * @return a list of search repositories
+	 */
+	@RequestMapping(path = &quot;/search/repositories&quot;, method = RequestMethod.GET)
+	public List&lt;Repo&gt; repos() {
+<span class="nc" id="L34">		logger.info(&quot;***Inside SpringBootSearchRepoController - repos()&quot;);</span>
+<span class="nc" id="L35">		return springBootSearchService.getRepos();</span>
+	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

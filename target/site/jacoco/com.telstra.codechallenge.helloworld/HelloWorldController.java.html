@@ -6,15 +6,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
-<span class="nc" id="L11">public class HelloWorldController {</span>
-  private static final String TEMPLATE = &quot;Hello, %s!&quot;;
-<span class="nc" id="L13">  private final AtomicLong counter = new AtomicLong();</span>
+<span class="nc" id="L10">public class HelloWorldController {</span>
+	private static final String TEMPLATE = &quot;Hello, %s!&quot;;
+<span class="nc" id="L12">	private final AtomicLong counter = new AtomicLong();</span>
 
-  @RequestMapping(path = &quot;/hello&quot;, method = RequestMethod.GET)
-  public HelloWorld hello(@RequestParam(value = &quot;name&quot;, defaultValue = &quot;World&quot;) String name) {
-<span class="nc" id="L17">    return new HelloWorld(counter.incrementAndGet(), String.format(TEMPLATE, name));</span>
-  }
+	@RequestMapping(path = &quot;/hello&quot;, method = RequestMethod.GET)
+	public HelloWorld hello(@RequestParam(value = &quot;name&quot;, defaultValue = &quot;World&quot;) String name) {
+<span class="nc" id="L16">		return new HelloWorld(counter.incrementAndGet(), String.format(TEMPLATE, name));</span>
+	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

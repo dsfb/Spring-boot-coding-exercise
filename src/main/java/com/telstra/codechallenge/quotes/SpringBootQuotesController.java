@@ -9,20 +9,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringBootQuotesController {
 
-  private SpringBootQuotesService springBootQuotesService;
+	private SpringBootQuotesService springBootQuotesService;
 
-  public SpringBootQuotesController(
-      SpringBootQuotesService springBootQuotesService) {
-    this.springBootQuotesService = springBootQuotesService;
-  }
+	public SpringBootQuotesController(SpringBootQuotesService springBootQuotesService) {
+		this.springBootQuotesService = springBootQuotesService;
+	}
 
-  @RequestMapping(path = "/quotes", method = RequestMethod.GET)
-  public List<Quote> quotes() {
-    return Arrays.asList(springBootQuotesService.getQuotes());
-  }
+	public SpringBootQuotesController() {
+		// TODO Auto-generated constructor stub
+	}
 
-  @RequestMapping(path = "/quotes/random", method = RequestMethod.GET)
-  public Quote quote() {
-    return springBootQuotesService.getRandomQuote();
-  }
+	@RequestMapping(path = "/quotes", method = RequestMethod.GET)
+	public List<Quote> quotes() {
+		return Arrays.asList(springBootQuotesService.getQuotes());
+	}
+
+	@RequestMapping(path = "/quotes/random", method = RequestMethod.GET)
+	public Quote quote() {
+		return springBootQuotesService.getRandomQuote();
+	}
 }

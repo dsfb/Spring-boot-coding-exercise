@@ -7,32 +7,34 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class SpringBootQuotesService {
 
-  @Value(&quot;${quotes.base.url}&quot;)
-  private String quotesBaseUrl;
+	@Value(&quot;${quotes.base.url}&quot;)
+	private String quotesBaseUrl;
 
-  private RestTemplate restTemplate;
+	private RestTemplate restTemplate;
 
-<span class="nc" id="L15">  public SpringBootQuotesService(RestTemplate restTemplate) {</span>
-<span class="nc" id="L16">    this.restTemplate = restTemplate;</span>
-<span class="nc" id="L17">  }</span>
+<span class="nc" id="L15">	public SpringBootQuotesService(RestTemplate restTemplate) {</span>
+<span class="nc" id="L16">		this.restTemplate = restTemplate;</span>
+<span class="nc" id="L17">	}</span>
 
-  /**
-   * Returns an array of spring boot quotes. Taken from https://spring.io/guides/gs/consuming-rest/.
-   *
-   * @return - a quote array
-   */
-  public Quote[] getQuotes() {
+	/**
+	 * Returns an array of spring boot quotes. Taken from
+	 * https://spring.io/guides/gs/consuming-rest/.
+	 *
+	 * @return - a quote array
+	 */
+	public Quote[] getQuotes() {
 
-<span class="nc" id="L26">    return restTemplate.getForObject(quotesBaseUrl + &quot;/api&quot;, Quote[].class);</span>
-  }
+<span class="nc" id="L27">		return restTemplate.getForObject(quotesBaseUrl + &quot;/api&quot;, Quote[].class);</span>
+	}
 
-  /**
-   * Returns a random spring boot quote. Taken from https://spring.io/guides/gs/consuming-rest/.
-   *
-   * @return - a quote
-   */
-  public Quote getRandomQuote() {
-<span class="nc" id="L35">    return restTemplate.getForObject(quotesBaseUrl + &quot;/api/random&quot;, Quote.class);</span>
-  }
+	/**
+	 * Returns a random spring boot quote. Taken from
+	 * https://spring.io/guides/gs/consuming-rest/.
+	 *
+	 * @return - a quote
+	 */
+	public Quote getRandomQuote() {
+<span class="nc" id="L37">		return restTemplate.getForObject(quotesBaseUrl + &quot;/api/random&quot;, Quote.class);</span>
+	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

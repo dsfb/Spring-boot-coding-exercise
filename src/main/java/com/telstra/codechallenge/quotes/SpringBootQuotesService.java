@@ -7,31 +7,33 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class SpringBootQuotesService {
 
-  @Value("${quotes.base.url}")
-  private String quotesBaseUrl;
+	@Value("${quotes.base.url}")
+	private String quotesBaseUrl;
 
-  private RestTemplate restTemplate;
+	private RestTemplate restTemplate;
 
-  public SpringBootQuotesService(RestTemplate restTemplate) {
-    this.restTemplate = restTemplate;
-  }
+	public SpringBootQuotesService(RestTemplate restTemplate) {
+		this.restTemplate = restTemplate;
+	}
 
-  /**
-   * Returns an array of spring boot quotes. Taken from https://spring.io/guides/gs/consuming-rest/.
-   *
-   * @return - a quote array
-   */
-  public Quote[] getQuotes() {
+	/**
+	 * Returns an array of spring boot quotes. Taken from
+	 * https://spring.io/guides/gs/consuming-rest/.
+	 *
+	 * @return - a quote array
+	 */
+	public Quote[] getQuotes() {
 
-    return restTemplate.getForObject(quotesBaseUrl + "/api", Quote[].class);
-  }
+		return restTemplate.getForObject(quotesBaseUrl + "/api", Quote[].class);
+	}
 
-  /**
-   * Returns a random spring boot quote. Taken from https://spring.io/guides/gs/consuming-rest/.
-   *
-   * @return - a quote
-   */
-  public Quote getRandomQuote() {
-    return restTemplate.getForObject(quotesBaseUrl + "/api/random", Quote.class);
-  }
+	/**
+	 * Returns a random spring boot quote. Taken from
+	 * https://spring.io/guides/gs/consuming-rest/.
+	 *
+	 * @return - a quote
+	 */
+	public Quote getRandomQuote() {
+		return restTemplate.getForObject(quotesBaseUrl + "/api/random", Quote.class);
+	}
 }

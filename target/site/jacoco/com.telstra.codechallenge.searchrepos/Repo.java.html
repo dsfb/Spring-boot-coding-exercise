@@ -17,27 +17,30 @@ import lombok.Setter;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-<span class="nc" id="L20">public class Repo {</span>
+<span class="fc" id="L20">public class Repo {</span>
 	public int getTotal_count() {
 <span class="nc" id="L22">		return total_count;</span>
 	}
+
 	public void setTotal_count(int total_count) {
-<span class="nc" id="L25">		this.total_count = total_count;</span>
-<span class="nc" id="L26">	}</span>
-	
+<span class="fc" id="L26">		this.total_count = total_count;</span>
+<span class="fc" id="L27">	}</span>
+
 	public boolean isIncomplete_results() {
-<span class="nc" id="L29">		return incomplete_results;</span>
+<span class="nc" id="L30">		return incomplete_results;</span>
 	}
+
 	public void setIncomplete_results(boolean incomplete_results) {
-<span class="nc" id="L32">		this.incomplete_results = incomplete_results;</span>
-<span class="nc" id="L33">	}</span>
-	
+<span class="nc" id="L34">		this.incomplete_results = incomplete_results;</span>
+<span class="nc" id="L35">	}</span>
+
 	public List&lt;Item&gt; getItems() {
-<span class="nc" id="L36">		return items;</span>
+<span class="nc" id="L38">		return items;</span>
 	}
+
 	public void setItems(List&lt;Item&gt; items) {
-<span class="nc" id="L39">		this.items = items;</span>
-<span class="nc" id="L40">	}</span>
+<span class="nc" id="L42">		this.items = items;</span>
+<span class="nc" id="L43">	}</span>
 
 	private int total_count;
 	private boolean incomplete_results;

@@ -30,4 +30,6 @@ public class MicroServiceMainTest {
     assertEquals("{\"status\":\"UP\"}", response
         .getBody());
   }
+  
+  
 }

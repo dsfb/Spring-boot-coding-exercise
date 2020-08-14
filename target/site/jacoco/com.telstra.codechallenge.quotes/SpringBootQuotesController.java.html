@@ -9,21 +9,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SpringBootQuotesController {
 
-  private SpringBootQuotesService springBootQuotesService;
+	private SpringBootQuotesService springBootQuotesService;
 
-  public SpringBootQuotesController(
-<span class="nc" id="L15">      SpringBootQuotesService springBootQuotesService) {</span>
-<span class="nc" id="L16">    this.springBootQuotesService = springBootQuotesService;</span>
-<span class="nc" id="L17">  }</span>
+<span class="nc" id="L14">	public SpringBootQuotesController(SpringBootQuotesService springBootQuotesService) {</span>
+<span class="nc" id="L15">		this.springBootQuotesService = springBootQuotesService;</span>
+<span class="nc" id="L16">	}</span>
 
-  @RequestMapping(path = &quot;/quotes&quot;, method = RequestMethod.GET)
-  public List&lt;Quote&gt; quotes() {
-<span class="nc" id="L21">    return Arrays.asList(springBootQuotesService.getQuotes());</span>
-  }
+<span class="nc" id="L18">	public SpringBootQuotesController() {</span>
+		// TODO Auto-generated constructor stub
+<span class="nc" id="L20">	}</span>
 
-  @RequestMapping(path = &quot;/quotes/random&quot;, method = RequestMethod.GET)
-  public Quote quote() {
-<span class="nc" id="L26">    return springBootQuotesService.getRandomQuote();</span>
-  }
+	@RequestMapping(path = &quot;/quotes&quot;, method = RequestMethod.GET)
+	public List&lt;Quote&gt; quotes() {
+<span class="nc" id="L24">		return Arrays.asList(springBootQuotesService.getQuotes());</span>
+	}
+
+	@RequestMapping(path = &quot;/quotes/random&quot;, method = RequestMethod.GET)
+	public Quote quote() {
+<span class="nc" id="L29">		return springBootQuotesService.getRandomQuote();</span>
+	}
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

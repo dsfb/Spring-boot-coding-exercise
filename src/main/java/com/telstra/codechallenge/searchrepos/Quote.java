@@ -7,14 +7,14 @@ import lombok.Data;
 @Data
 public class Quote {
 
-  private String type;
-  private Value value;
+	private String type;
+	private Value value;
 
-  @JsonIgnoreProperties(ignoreUnknown = true)
-  @Data
-  public class Value {
+	@JsonIgnoreProperties(ignoreUnknown = true)
+	@Data
+	public class Value {
 
-    private Long id;
-    private String quote;
-  }
+		private Long id;
+		private String quote;
+	}
 }

@@ -10,21 +10,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @RestController
 public class SpringBootSearchRepoController {
-  Logger logger = LoggerFactory.getLogger(SpringBootSearchRepoController.class);
+	Logger logger = LoggerFactory.getLogger(SpringBootSearchRepoController.class);
 
-  private SpringBootSearchRepoService springBootSearchService;
+	public SpringBootSearchRepoService springBootSearchService;
 
-  public SpringBootSearchRepoController(
-      SpringBootSearchRepoService springBootSearchService) {
-    this.springBootSearchService = springBootSearchService;
-  }
+	public SpringBootSearchRepoController(SpringBootSearchRepoService springBootSearchService) {
+		this.springBootSearchService = springBootSearchService;
+	}
 
-  @RequestMapping(path = "/search/repositories", method = RequestMethod.GET)
-  public List<Repo> repos() {
-	  logger.info("***Inside SpringBootSearchRepoController - repos()");
-    return springBootSearchService.getRepos();
-  }
+	public SpringBootSearchRepoController() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @return a list of search repositories
+	 */
+	@RequestMapping(path = "/search/repositories", method = RequestMethod.GET)
+	public List<Repo> repos() {
+		logger.info("***Inside SpringBootSearchRepoController - repos()");
+		return springBootSearchService.getRepos();
+	}
 }
